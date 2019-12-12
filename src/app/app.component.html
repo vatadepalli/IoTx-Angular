@@ -1,9 +1,13 @@
-<!-- <h1>Hello, Application!</h1> -->
-<!-- <h2>Hello, {{ name }}</h2> -->
-
-<!-- <app-user></app-user> -->
-<app-navbar></app-navbar>
-<div class="container">
-  <router-outlet> </router-outlet>
-  <!-- <app-users></app-users> -->
+<div id="root">
+  <div class="" id="navbar">
+    <app-navbar></app-navbar>
+  </div>
+  <div class="row wrapper" id="body">
+    <div id="sidenav" class="sidebar">
+      <app-sidenav></app-sidenav>
+    </div>
+    <div id="router" class="content">
+      <router-outlet> </router-outlet>
+    </div>
+  </div>
 </div>

@@ -1,10 +1,10 @@
-<nav class="navbar navbar-dark bg-primary mb-4 navbar-expand">
+<nav class="navbar navbar-dark bg-primary navbar-expand shadow">
   <div class="container">
     <a
       [routerLink]="['/']"
       routerLinkActive="router-link-active"
       class="navbar-brand"
-      >Angular Again</a
+      >IoTx</a
     >
     <!-- Nav Items  -->
     <div>
@@ -17,30 +17,6 @@
             class="nav-link"
             >Home</a
           >
-        </li>
-        <li
-          [routerLink]="['/users']"
-          [routerLinkActive]="['active']"
-          [routerLinkActiveOptions]="{ exact: true }"
-          class="nav-item"
-        >
-          <a class="nav-link">Users</a>
-        </li>
-        <li
-          [routerLink]="['/posts']"
-          [routerLinkActive]="['active']"
-          [routerLinkActiveOptions]="{ exact: true }"
-          class="nav-item"
-        >
-          <a class="nav-link">Posts</a>
-        </li>
-        <li
-          [routerLink]="['/logs']"
-          [routerLinkActive]="['active']"
-          [routerLinkActiveOptions]="{ exact: true }"
-          class="nav-item"
-        >
-          <a class="nav-link">Logs</a>
         </li>
       </ul>
     </div>

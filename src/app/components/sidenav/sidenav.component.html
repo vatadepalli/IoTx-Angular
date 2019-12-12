@@ -1,0 +1,18 @@
+<div
+  @fade
+  id="sidenav"
+  [class.sidenav-expand]="!isCollapsed"
+  [class.sidenav-collapse]="isCollapsed"
+>
+  <!-- close sidebar menu -->
+  <i
+    *ngIf="!isCollapsed"
+    (click)="toggleCollapse()"
+    class="fa fa-arrow-left float-right pr-3 pt-2"
+  ></i>
+  <i
+    *ngIf="isCollapsed"
+    (click)="toggleCollapse()"
+    class="fa fa-arrow-right float-right pr-3 pt-2"
+  ></i>
+</div>
