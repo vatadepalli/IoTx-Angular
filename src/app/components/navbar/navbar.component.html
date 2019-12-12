@@ -1,0 +1,48 @@
+<nav class="navbar navbar-dark bg-primary mb-4 navbar-expand">
+  <div class="container">
+    <a
+      [routerLink]="['/']"
+      routerLinkActive="router-link-active"
+      class="navbar-brand"
+      >Angular Again</a
+    >
+    <!-- Nav Items  -->
+    <div>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a
+            [routerLink]="['/']"
+            [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="nav-link"
+            >Home</a
+          >
+        </li>
+        <li
+          [routerLink]="['/users']"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-item"
+        >
+          <a class="nav-link">Users</a>
+        </li>
+        <li
+          [routerLink]="['/posts']"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-item"
+        >
+          <a class="nav-link">Posts</a>
+        </li>
+        <li
+          [routerLink]="['/logs']"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-item"
+        >
+          <a class="nav-link">Logs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
