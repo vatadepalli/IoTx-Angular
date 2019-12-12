@@ -2,3 +2,8 @@
   /* background-color: teal !important; */
   background-image: linear-gradient(teal, teal);
 }
+
+.navbar-brand {
+  font-family: "Alfa Slab One" !important;
+  font-size: 24px;
+}
