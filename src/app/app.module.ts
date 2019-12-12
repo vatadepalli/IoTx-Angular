@@ -8,11 +8,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 
-// Services
-import { UserService } from "./services/user.service";
-import { PostService } from "./services/post.service";
-import { LogService } from "./services/log.service";
-
 import { HomeComponent } from "./components/home/home.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { SidenavComponent } from "./components/sidenav/sidenav.component";
@@ -32,7 +27,7 @@ import { SidenavComponent } from "./components/sidenav/sidenav.component";
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [UserService, PostService, LogService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
