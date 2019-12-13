@@ -5,6 +5,7 @@
   padding-left: 20px;
   padding-top: 5px;
   height: 100%;
+  transition: 0.5s;
 }
 
 .sidenav-expand {
@@ -20,4 +21,9 @@ i {
   text-align: right;
   /* background-color: pink; */
   padding: 10px;
+}
+
+.leds {
+  align-content: center;
+  margin: auto;
 }

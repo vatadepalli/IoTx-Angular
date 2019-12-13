@@ -3,30 +3,36 @@
   id="sidenav"
   [class.sidenav-expand]="!isCollapsed"
   [class.sidenav-collapse]="isCollapsed"
+  class="disable-selection"
 >
   <!-- close sidebar menu -->
-  <i
-    *ngIf="!isCollapsed"
-    (click)="toggleCollapse()"
-    class="fa fa-arrow-left float-right pr-3 pt-2"
-  ></i>
-  <i
-    *ngIf="isCollapsed"
-    (click)="toggleCollapse()"
-    class="fa fa-arrow-right float-right pr-3 pt-2"
-  ></i>
+  <div id="icons">
+    <i
+      *ngIf="!isCollapsed"
+      (click)="toggleCollapse()"
+      class="fa fa-arrow-left float-right pr-3 pt-2"
+    ></i>
+    <i
+      *ngIf="isCollapsed"
+      (click)="toggleCollapse()"
+      class="fa fa-arrow-right float-right pr-3 pt-2"
+    ></i>
+  </div>
 
-  <nav class="navbar navbar-light bg-light" [class.d-none]="isCollapsed">
+  <nav class="navbar navbar-light bg-light shadow" [class.d-none]="isCollapsed">
     <div class="navbar-collapse col" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
+        <!-- Divider  -->
+        <div class="dropdown-divider"></div>
+        <!-- DEVICE RELATED STUFF  -->
+        <!-- Home  -->
         <li class="nav-item active">
-          <a class="nav-link" href="#"
-            >Home <span class="sr-only">(current)</span></a
-          >
+          <a class="nav-link" href="#">
+            <h5>Home</h5>
+          </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
+
+        <!-- Dashboards  -->
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
@@ -37,25 +43,62 @@
             aria-haspopup="true"
             aria-expanded="false"
           >
-            Dropdown
+            Dashboards
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Dashboard 1</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else</a>
+            <a class="dropdown-item" href="#">Dashboard 2</a>
           </div>
         </li>
+
+        <!-- Devices  -->
         <li class="nav-item">
-          <a
-            class="nav-link disabled"
-            href="#"
-            tabindex="-1"
-            aria-disabled="true"
-            >Disabled</a
-          >
+          <a class="nav-link" href="#">Devices</a>
+        </li>
+
+        <!-- Data  -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">Data</a>
+        </li>
+
+        <!-- Access  -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">Access</a>
+        </li>
+
+        <!-- Divider  -->
+        <div class="dropdown-divider"></div>
+        <!-- ACCOUNT RELATED STUFF  -->
+        <h5>Account</h5>
+        <!-- Profile  -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">Profile</a>
+        </li>
+        <!-- Settings  -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">Settings</a>
+        </li>
+        <!-- Users  -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">Users</a>
+        </li>
+
+        <!-- Divider  -->
+        <div class="dropdown-divider"></div>
+        <!-- RESOURCES RELATED STUFF  -->
+        <h5>Resources</h5>
+        <!-- Profile  -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">Marketplace</a>
         </li>
       </ul>
     </div>
   </nav>
+
+  <!-- LEDs  -->
+
+  <!-- <div class="leds">
+    <p id="led1">L</p>
+  </div> -->
 </div>
