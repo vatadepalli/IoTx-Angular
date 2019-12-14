@@ -1,0 +1,38 @@
+<h3 style="text-align: center;">Available Devices</h3>
+
+<div class="container" id="device-list">
+  <button
+    class="btn btn-success"
+    [routerLink]="['/add-device']"
+    routerLinkActive="router-link-active"
+  >
+    Add Device
+  </button>
+
+  <div class="mt-2"><p>Showing 3 Devices</p></div>
+
+  <table class="table mt-3">
+    <tr>
+      <th>Device</th>
+      <th>Description</th>
+      <th>Last Connection</th>
+    </tr>
+    <tr>
+      <td [routerLink]="['/device']" routerLinkActive="router-link-active">
+        Device 1
+      </td>
+      <td>Description 1</td>
+      <td>Never</td>
+    </tr>
+    <tr>
+      <td>Device 2</td>
+      <td>Description 2</td>
+      <td>Long Time Ago</td>
+    </tr>
+    <tr>
+      <td>Device 3</td>
+      <td>Description 3</td>
+      <td>Few Days Ago</td>
+    </tr>
+  </table>
+</div>

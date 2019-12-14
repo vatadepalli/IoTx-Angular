@@ -19,3 +19,7 @@
   -webkit-user-select: none; /* Chrome, Safari, and Opera */
   -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
 }
+
+.btn-success {
+  background-color: teal !important ;
+}

@@ -1,0 +1,16 @@
+.table {
+  border: 1px solid lightgrey;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  padding: 8px;
+}
+
+.table > tr > th {
+  background-color: teal;
+  color: white;
+}
+
+.table > tr:nth-child(even) {
+  background-color: rgb(250, 251, 252);
+}

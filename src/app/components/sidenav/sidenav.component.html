@@ -19,6 +19,7 @@
     ></i>
   </div>
 
+  <!-- NavBar  -->
   <nav class="navbar navbar-light bg-light shadow" [class.d-none]="isCollapsed">
     <div class="navbar-collapse col" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
@@ -26,8 +27,13 @@
         <div class="dropdown-divider"></div>
         <!-- DEVICE RELATED STUFF  -->
         <!-- Home  -->
-        <li class="nav-item active">
-          <a class="nav-link" href="#">
+        <li
+          class="nav-item active"
+          [routerLink]="['/']"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a class="nav-link">
             <h5>Home</h5>
           </a>
         </li>
@@ -53,8 +59,13 @@
         </li>
 
         <!-- Devices  -->
-        <li class="nav-item">
-          <a class="nav-link" href="#">Devices</a>
+        <li
+          class="nav-item"
+          [routerLink]="['/devices']"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a class="nav-link">Devices</a>
         </li>
 
         <!-- Data  -->
@@ -88,9 +99,33 @@
         <div class="dropdown-divider"></div>
         <!-- RESOURCES RELATED STUFF  -->
         <h5>Resources</h5>
-        <!-- Profile  -->
+        <!-- Widgets  -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">Widgets</a>
+        </li>
+        <!-- Marketplace  -->
         <li class="nav-item">
           <a class="nav-link" href="#">Marketplace</a>
+        </li>
+        <!-- GitHub  -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">GitHub</a>
+        </li>
+        <!-- Documentation  -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">Documentation</a>
+        </li>
+        <!-- Divider  -->
+        <div class="dropdown-divider"></div>
+        <!-- RESOURCES RELATED STUFF  -->
+        <h5>Contact</h5>
+        <!-- Email  -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">Email</a>
+        </li>
+        <!-- Twitter  -->
+        <li class="nav-item">
+          <a class="nav-link" href="#">Twitter</a>
         </li>
       </ul>
     </div>
