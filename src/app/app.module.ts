@@ -8,14 +8,17 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 
+// Services
+import { DeviceService } from "./services/device.service";
+
 import { HomeComponent } from "./components/home/home.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { SidenavComponent } from "./components/sidenav/sidenav.component";
-import { DevicesComponent } from './components/core/devices/devices.component';
-import { DashboardsComponent } from './components/core/dashboards/dashboards.component';
-import { AddDeviceComponent } from './components/core/devices/add-device/add-device.component';
-import { ListDevicesComponent } from './components/core/devices/list-devices/list-devices.component';
-import { DeviceComponent } from './components/core/devices/device/device.component';
+import { DevicesComponent } from "./components/core/devices/devices.component";
+import { DashboardsComponent } from "./components/core/dashboards/dashboards.component";
+import { AddDeviceComponent } from "./components/core/devices/add-device/add-device.component";
+import { ListDevicesComponent } from "./components/core/devices/list-devices/list-devices.component";
+import { DeviceComponent } from "./components/core/devices/device/device.component";
 
 @NgModule({
   declarations: [
@@ -37,7 +40,7 @@ import { DeviceComponent } from './components/core/devices/device/device.compone
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [DeviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
