@@ -10,4 +10,4 @@ deploy:
   bucket: "meghaduta.org"
   skip_cleanup: true
   acl: public_read
-  local_dir: build
+  local_dir: "dist/iotx-angular"
