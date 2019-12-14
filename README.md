@@ -1,5 +1,12 @@
 # IoTx-Angular
 
+## Environment Variables
+
+Configure environment variables in the environment folder.
+Currently Set:
+
+- Backend Url
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.14.
 
 ## Development server
