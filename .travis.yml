@@ -1,10 +1,17 @@
+dist: xenial
+sudo: false
+
 language: node_js
 node_js:
   - 12
+
+cache:
+  directories:
+    - ./node_modules
 install:
-  - yarn
+  - npm install
 script:
-  - yarn build
+  - npm run-script build
 deploy:
   provider: s3
   access_key_id: $AWS_ACCESS_KEY
