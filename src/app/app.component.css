@@ -27,3 +27,15 @@
   background-color: rgb(255, 255, 255);
   padding: 20px;
 }
+
+@media only screen and (max-width: 600px) {
+  #sidenav {
+    /* border: 1px solid black; */
+    position: fixed;
+  }
+
+  #router {
+    /* border: 1px solid black; */
+    padding-top: 35px;
+  }
+}
