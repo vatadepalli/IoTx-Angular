@@ -1,0 +1,197 @@
+<button (click)="showUserForm = !showUserForm" class="btn btn-dark mb-3">
+  Add User
+</button>
+
+<div class="card card-body mb-3" *ngIf="showUserForm">
+  <h2>Add User</h2>
+  <!-- Form Starts -->
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <div class="form-group">
+      <label>First Name</label>
+      <input
+        [(ngModel)]="user.firstName"
+        [ngClass]="{
+          'is-invalid': userFirstName.errors && userFirstName.touched
+        }"
+        (keydown)="fireEvent($event)"
+        type="text"
+        class="form-control is-invalid"
+        name="firstName"
+        #userFirstName="ngModel"
+        required
+        minlength="2"
+      />
+      <div [hidden]="!userFirstName.errors?.required" class="invalid-feedback">
+        First Name Required
+      </div>
+      <div [hidden]="!userFirstName.errors?.minlength" class="invalid-feedback">
+        Must Be Atleast Two Characters
+      </div>
+      <!-- {{ user.firstName }} <br /> -->
+    </div>
+
+    <div class="form-group">
+      <label>Last Name</label>
+      <input
+        [(ngModel)]="user.lastName"
+        [ngClass]="{
+          'is-invalid': userLastName.errors && userLastName.touched
+        }"
+        (keydown)="fireEvent($event)"
+        type="text"
+        class="form-control is-invalid"
+        name="lastName"
+        #userLastName="ngModel"
+        required
+        minlength="2"
+      />
+      <div [hidden]="!userLastName.errors?.required" class="invalid-feedback">
+        Last Name Required
+      </div>
+      <div [hidden]="!userLastName.errors?.minlength" class="invalid-feedback">
+        Must Be Atleast Two Characters
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input
+        [(ngModel)]="user.email"
+        [ngClass]="{
+          'is-invalid': userEmail.errors && userEmail.touched
+        }"
+        (keydown)="fireEvent($event)"
+        type="text"
+        class="form-control is-invalid"
+        name="email"
+        #userEmail="ngModel"
+        required
+        pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+      />
+      <div [hidden]="!userEmail.errors?.required" class="invalid-feedback">
+        Email Required
+      </div>
+      <div [hidden]="!userEmail.errors?.pattern" class="invalid-feedback">
+        Email is not valid
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Age</label>
+      <input
+        [(ngModel)]="user.age"
+        (keydown)="fireEvent($event)"
+        type="number"
+        class="form-control"
+        name="age"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Street Address</label>
+      <input
+        [(ngModel)]="user.address.street"
+        (keydown)="fireEvent($event)"
+        type="text"
+        class="form-control"
+        name="street"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>City</label>
+      <input
+        [(ngModel)]="user.address.city"
+        (keydown)="fireEvent($event)"
+        type="text"
+        class="form-control"
+        name="city"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>State</label>
+      <input
+        [(ngModel)]="user.address.state"
+        (keydown)="fireEvent($event)"
+        type="text"
+        class="form-control"
+        name="state"
+      />
+    </div>
+
+    <button
+      [disabled]="!userForm.form.valid"
+      class="btn btn-block mb-3"
+      [ngClass]="currentClasses"
+    >
+      Add New User
+    </button>
+  </form>
+  <!-- Form Ends -->
+</div>
+
+<h2>Users</h2>
+
+<!-- <ul *ngIf="users.length > 0; else noUsers"> -->
+<ul class="list-unstyled" *ngIf="loaded && users?.length > 0">
+  <!-- USER CARDS: iterate here on users -->
+  <li
+    class="card card-body mb-2"
+    *ngFor="let user of users"
+    [class.bg-light]="user.isActive"
+    [style.border-color]="user.isActive ? 'green' : 'red'"
+  >
+    <!-- Image & Profile Data Row  -->
+    <div class="row">
+      <!-- Image Div -->
+      <div class="col-sm-4">
+        <img class="img-fluid" [src]="user.image" alt="" />
+        <!-- <img class="img-fluid" src="{{ user.image }}" alt="" /> -->
+        <!-- <img class="img-fluid" bind-src="user.image" alt="" /> -->
+      </div>
+      <!-- Profile Data Div  -->
+      <div class="col-sm-8">
+        <h3 [ngStyle]="currentStyles">
+          {{ user.firstName | uppercase }} {{ user.lastName | lowercase }}
+          <small
+            ><button
+              (click)="user.hide = !user.hide"
+              class="btn btn-dark btn-sm"
+            >
+              <i
+                [ngClass]="user.hide ? 'fa fa-plus' : 'fa fa-minus'"
+              ></i></button
+          ></small>
+        </h3>
+        <!-- <ul class="list-group" *ngIf="showExtended"> -->
+        <ul class="list-group" *ngIf="!user.hide">
+          <li class="list-group-item">Email: {{ user.email }}</li>
+          <li class="list-group-item">Age: {{ user.age }}</li>
+          <li class="list-group-item">
+            Address: {{ user.address.street }}, {{ user.address.city }},
+            {{ user.address.state }}
+          </li>
+          <li class="list-group-item">
+            Balance: {{ user.balance | currency: "INR" }}
+          </li>
+          <li class="list-group-item">
+            Joined: {{ user.registered | date }}
+            <!-- Joined: {{ user.registered | date: "mm/dd/yyyy" }} -->
+            <!-- Joined: {{ user.registered | date: "shortDate" }} -->
+            <!-- Joined: {{ user.registered | date: "longDate" }} -->
+            <!-- Joined: {{ user.registered | date: "fullDate" }} -->
+            <!-- Joined: {{ user.registered | date: "shortTime" }} -->
+          </li>
+          <li class="list-group-item" ngNonBindable>
+            <pre>{{ 5 | number: "2.3" }}</pre>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<!-- <ng-template #noUsers> <h4>No Users Found!!</h4></ng-template> -->
+<h4 *ngIf="users?.length == 0">No Users Found</h4>
+<h4 *ngIf="!loaded">Loading Users</h4>
