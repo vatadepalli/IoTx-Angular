@@ -1,8 +1,5 @@
 #sidenav {
-  /* width: 250px; */
   background-color: rgb(226, 226, 226);
-
-  padding-left: 20px;
   padding-top: 5px;
   height: 100%;
   transition: 0.5s;
@@ -19,11 +16,5 @@
 i {
   width: 100%;
   text-align: right;
-  /* background-color: pink; */
   padding: 10px;
-}
-
-.leds {
-  align-content: center;
-  margin: auto;
 }

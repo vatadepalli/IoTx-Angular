@@ -1,25 +1,10 @@
-import { Component, OnInit } from "@angular/core";
-import { trigger, transition, animate, style } from "@angular/animations";
+import {animate, style, transition, trigger} from '@angular/animations';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: "app-sidenav",
-  templateUrl: "./sidenav.component.html",
-  styleUrls: ["./sidenav.component.css"],
-  animations: [
-    trigger("fade", [
-      transition("void => *", [
-        style({
-          width: 0
-        }),
-        animate(
-          500,
-          style({
-            width: "250px"
-          })
-        )
-      ])
-    ])
-  ]
+  selector: 'app-sidenav',
+  templateUrl: './sidenav.component.html',
+  styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
   isCollapsed: boolean = false;

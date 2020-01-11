@@ -1,6 +1,6 @@
 .navbar {
-  /* background-color: teal !important; */
-  background-image: linear-gradient(teal, teal);
+  background-color: teal !important;
+  height: 50px;
 }
 
 .navbar-brand {
