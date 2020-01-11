@@ -32,9 +32,31 @@
             class="dropdown-menu dropdown-menu-right"
             aria-labelledby="navbarDropdown"
           >
-            <a class="dropdown-item" href="#">Logout</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Login</a>
+            <a
+              *ngIf="loginService.isUserLoggedIn()"
+              class="dropdown-item"
+              [routerLink]="['/logout']"
+              [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Logout</a
+            >
+            <!-- <div class="dropdown-divider"></div> -->
+            <a
+              *ngIf="!loginService.isUserLoggedIn()"
+              class="dropdown-item"
+              [routerLink]="['/login']"
+              [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Login</a
+            >
+            <a
+              *ngIf="!loginService.isUserLoggedIn()"
+              class="dropdown-item"
+              [routerLink]="['/register']"
+              [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Register</a
+            >
           </div>
         </li>
       </ul>
