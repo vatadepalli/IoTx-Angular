@@ -5,6 +5,10 @@
   transition: 0.5s;
 }
 
+*:focus {
+  outline: none !important;
+}
+
 .sidenav-expand {
   width: 250px;
 }

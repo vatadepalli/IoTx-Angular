@@ -1,5 +1,4 @@
 <div
-  @fade
   id="sidenav"
   [class.sidenav-expand]="!isCollapsed"
   [class.sidenav-collapse]="isCollapsed"
@@ -28,7 +27,7 @@
         <!-- DEVICE RELATED STUFF  -->
         <!-- Home  -->
         <li
-          class="nav-item active"
+          class="nav-item"
           [routerLink]="['/']"
           [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }"
