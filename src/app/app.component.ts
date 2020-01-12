@@ -9,5 +9,5 @@ import {AuthenticationService} from './services/authentication.service';
 export class AppComponent {
   name = 'Vijaya Aditya';
 
-  constructor(private authenticationService: AuthenticationService) {}
+  constructor(public authenticationService: AuthenticationService) {}
 }
