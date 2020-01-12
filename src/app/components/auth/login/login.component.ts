@@ -1,31 +1,38 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {AuthenticationService} from 'src/app/services/authentication.service';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { AuthenticationService } from "src/app/services/authentication.service";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: "app-login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
-  username = 'vatadepalli';
-  password = ''
+  username = "vatadepalli";
+  password = "";
   invalidLogin = false;
 
   constructor(
-      private router: Router,
-      private authenticationService: AuthenticationService) {}
+    private router: Router,
+    private authenticationService: AuthenticationService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.authenticationService.isUserLoggedIn()) {
+      this.router.navigate([""]);
+    }
+  }
   checkLogin() {
-    (this.authenticationService.authenticate(this.username, this.password)
-         .subscribe(
-             data => {
-               this.router.navigate(['']);
-               this.invalidLogin = false;
-             },
-             error => {
-               this.invalidLogin = true;
-             }));
+    this.authenticationService
+      .authenticate(this.username, this.password)
+      .subscribe(
+        data => {
+          this.router.navigate([""]);
+          this.invalidLogin = false;
+        },
+        error => {
+          this.invalidLogin = true;
+        }
+      );
   }
 }

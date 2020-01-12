@@ -83,7 +83,13 @@
         <h5>Account</h5>
         <!-- Profile  -->
         <li class="nav-item">
-          <a class="nav-link" href="#">Profile</a>
+          <a
+            class="nav-link"
+            [routerLink]="['/profile']"
+            [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Profile</a
+          >
         </li>
         <!-- Settings  -->
         <li class="nav-item">

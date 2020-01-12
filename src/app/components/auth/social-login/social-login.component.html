@@ -1,6 +1,27 @@
-<button class="btn btn-social-icon btn-google" (click)="signInWithGoogle()">
-  <span class="fa fa-google"></span> Sign in with Google
-</button>
-<button class="btn btn-social-icon btn-facebook" (click)="signInWithFB()">
-  <span class="fa fa-facebook"></span> Sign in with Facebook
-</button>
+<!--Facebook-->
+<div class="shadow bg-white rounded mb-3">
+  <button
+    type="button"
+    mdbBtn
+    color="fb"
+    class="waves-light fb"
+    mdbWavesEffect
+    (click)="signInWithFB()"
+  >
+    <i class="fab fa-facebook-f left mr-2"></i>Login With Facebook
+  </button>
+</div>
+
+<!--Google +-->
+<div class="shadow bg-white rounded">
+  <button
+    type="button"
+    mdbBtn
+    color="gplus"
+    class="waves-light gp shadow rounded"
+    mdbWavesEffect
+    (click)="signInWithGoogle()"
+  >
+    <i class="fab fa-google-plus left mr-2"></i>Login With Google
+  </button>
+</div>

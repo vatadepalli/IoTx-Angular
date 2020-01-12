@@ -39,6 +39,7 @@ import {
   GoogleLoginProvider,
   FacebookLoginProvider
 } from "angularx-social-login";
+import { ProfileComponent } from './components/auth/profile/profile.component';
 
 const config = new AuthServiceConfig([
   {
@@ -78,7 +79,8 @@ export function provideConfig() {
     GuageComponent,
     ChartComponent,
     ReadingComponent,
-    SocialLoginComponent
+    SocialLoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -21,7 +21,6 @@
             "aot": false,
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.css"
             ],

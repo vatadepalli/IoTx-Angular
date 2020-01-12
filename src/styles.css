@@ -3,6 +3,11 @@
 * {
   font-family: "Fira Sans", sans-serif;
 }
+
+.btn-primary {
+  background-color: teal !important;
+}
+
 .bold {
   font-weight: bold;
 }
