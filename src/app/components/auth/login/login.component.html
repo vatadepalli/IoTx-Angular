@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6" style="float: none; margin: 0 auto;">
+    <div class="col-md-6 col-center">
       <h1>Login</h1>
       <form (ngSubmit)="checkLogin()" #form="ngForm">
         <div class="form-group">
@@ -28,6 +28,9 @@
           <button type="submit" class="btn btn-primary">Login</button>
         </div>
       </form>
+      <div class="container mt-5">
+        <app-social-login></app-social-login>
+      </div>
     </div>
   </div>
 </div>

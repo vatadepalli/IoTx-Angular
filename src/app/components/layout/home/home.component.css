@@ -1,0 +1,6 @@
+.btn-primary,
+.btn-success {
+  background-color: teal;
+  width: 100px;
+  margin: 20px;
+}

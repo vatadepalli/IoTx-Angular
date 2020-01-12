@@ -1,7 +1,6 @@
 export interface Device {
-  device_number: number;
-  deviceType: string;
-  deviceId: string;
+  deviceID: number;
+  deviceCred: number;
   deviceDescription: string;
-  deviceToken: string;
+  endpointIDs: number[];
 }

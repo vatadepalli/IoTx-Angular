@@ -1,11 +1,29 @@
-<!-- Body  -->
-<h1>Welcome</h1>
-<p>This is the FrontEnd Application for the IoTx project</p>
-<p>Build: {{ build }}</p>
-<button
-  class="btn btn-secondary"
-  [routerLink]="['/users']"
-  routerLinkActive="router-link-active"
->
-  Placeholder
-</button>
+<div class="container">
+  <!-- Displayed when logged in  -->
+  <app-stats *ngIf="loginService.isUserLoggedIn()"></app-stats>
+  <!-- Displayed when Logged out -->
+  <div *ngIf="!loginService.isUserLoggedIn()" class="row">
+    <div class="col-md-8 col-center" style="text-align: center;">
+      <h1>Welcome</h1>
+      <h3>Placeholder greeting page</h3>
+      <div class="container">
+        <button
+          class="btn btn-primary"
+          [routerLink]="['/login']"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Login
+        </button>
+        <button
+          class="btn btn-success"
+          [routerLink]="['/register']"
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Register
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

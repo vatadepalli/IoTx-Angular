@@ -2,6 +2,10 @@
   class="navbar navbar-dark bg-primary navbar-expand shadow disable-selection"
 >
   <div class="container">
+    <i
+      *ngIf="loginService.isUserLoggedIn() && isSidenavCollapsed"
+      class="fas fa-bars"
+    ></i>
     <a
       [routerLink]="['/']"
       routerLinkActive="router-link-active"
