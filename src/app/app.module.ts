@@ -1,4 +1,4 @@
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
@@ -20,9 +20,11 @@ import {NavbarComponent} from './components/layout/navbar/navbar.component';
 import {NotFoundComponent} from './components/layout/not-found/not-found.component';
 import {SidenavComponent} from './components/layout/sidenav/sidenav.component';
 import {AuthGaurdService} from './services/auth-gaurd.service';
+import {AuthHttpInterceptorService} from './services/auth-http-interceptor.service';
 import {AuthenticationService} from './services/authentication.service';
 // Services
 import {DeviceService} from './services/device.service';
+import {HttpClientService} from './services/http-client.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,13 @@ import {DeviceService} from './services/device.service';
     BrowserModule, AppRoutingModule, FormsModule, HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [DeviceService, AuthenticationService, AuthGaurdService],
+  providers: [
+    DeviceService, AuthenticationService, AuthGaurdService, HttpClientService, {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthHttpInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -16,11 +16,6 @@ export class DeviceService {
   constructor(private http: HttpClient) {}
 
   getDeviceList(): Observable<Device[]> {
-    let username = 'vatadepalli'
-    let password = 'annab'
-
-    const headers = new HttpHeaders(
-        {Authorization: 'Basic ' + btoa(username + ':' + password)});
-    return this.http.get<Device[]>(this.deviceUrl, {headers});
+    return this.http.get<Device[]>(this.deviceUrl);
   }
 }
