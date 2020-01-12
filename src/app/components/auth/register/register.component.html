@@ -1,1 +1,58 @@
-<p>register works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col col-md-3"></div>
+    <div class="col col-md-6">
+      <div class="container mb-5 mt-3" style="text-align: center;">
+        <h3>Register</h3>
+      </div>
+      <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="form-group">
+          <label>User Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            [(ngModel)]="user.username"
+          />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            [(ngModel)]="user.password"
+          />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input
+            type="text"
+            class="form-control"
+            name="email"
+            [(ngModel)]="user.email"
+          />
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input
+            type="text"
+            class="form-control"
+            name="phoneNumber"
+            [(ngModel)]="user.phoneNumber"
+          />
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+        <p *ngIf="invalidRegister" class="error">
+          User Already Exists
+        </p>
+        <p *ngIf="registered" class="registered">
+          Registration Succesful
+        </p>
+      </form>
+    </div>
+    <div class="col col-md-3"></div>
+  </div>
+</div>
